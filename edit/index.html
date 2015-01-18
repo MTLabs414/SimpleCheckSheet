@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv = "X-UA-Compatible" content="IE=edge">
+    <!-- ブラウザの横幅を一杯に合わせる -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src ="js/jquery-2.1.3.js"></script>
+    <script src ="js/jquery.validate.min.js"></script>
+    <script src ="js/bootstrap.min.js"></script>
+    <!--
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/smoothness/jquery-ui.css"/>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="http://getbootstrap.com/dist/js/bootstrap.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.css"/>
+    <script type="text/javascript" src="http://documentcloud.github.io/backbone/backbone-min.js"></script>
+    <script type="text/javascript" src="http://documentcloud.github.io/underscore/underscore-min.js"></script>
+    <title>HTML5, CSS3 and JavaScript demo</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css"/>-->
+</head>
+  <body>
+    <!-- Start your code here -->
+    <div class="container">
+      <form method="post" action="" class="form-horizontal">
+        <h3>プロジェクト簡易QCDSチェックシート</h3>
+        <p>下記の項目を入力してください</p>
+        <div class="tabbable-panel">
+          <div class="tabbable-line">
+            <ul class="nav nav-tabs ">
+              <li class="active">
+                <a href="#tab_default_1" data-toggle="tab">プロジェクト計画 </a>
+              </li>
+              <li>
+                <a href="#tab_default_2" data-toggle="tab">コンプライアンス </a>
+              </li>
+              <li>
+                <a href="#tab_default_3" data-toggle="tab">社内事務</a>
+              </li>
+              <li>
+                <a href="#tab_default_4" data-toggle="tab">プロジェクト実施</a>
+              </li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane active" id="tab_default_1">
+                <h4>プロジェクト計画</h4>
+                <div class="form-group">
+                  <p for="title" class="control-label col-sm-4">
+                    <strong>現在の主工程</strong>
+                  </p>
+                  <div class="col-sm-8">
+                    <select name="kotei" id="kotei" class="form-control">
+                      <option value="kotei-kihon">基本設計</option>
+                      <option value="kotei-shosai">詳細設計</option>
+                      <option value="kotei-seizou">製造</option>
+                      <option value="kotei-utest">単体テスト</option>
+                      <option value="kotei-stest">結合テスト</option>
+                    </select>
+                  </div>
+                </div>
+                <!-- 現在の主工程　工程を選択 -->
+                <div class="form-group">
+                  <p class="control-label col-sm-4">
+                    <strong>プロジェクト計画期間</strong>
+                  </p>
+                  <div class="col-sm-8">
+                    <div class='input-group date' id='datetimepicker1'>
+                      <span style="width:80" class="input-group-addon">開始</span>
+                      <input type='text' class="form-control" />
+                      <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <!-- プロジェクト計画期間 -->
+                <div class="form-group">
+                  <div class="col-sm-4"></div>
+                  <div class="col-sm-8">
+                    <div class='input-group date' id='datetimepicker2'>
+                      <span style="width:80" class="input-group-addon">終了</span>
+                      <input type='text' class="form-control" />
+                      <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <!-- プロジェクト計画規模数 -->
+                <div class="form-group">
+                  <p for="title" class="control-label col-sm-4">
+                    <strong>プロジェクト計画機能数</strong>
+                  </p>
+                  <div class="col-sm-8">
+                    <div class='input-group' id='datetimepicker1'>
+                      <input type="number" class="form-control" placeholder="画面数"/>
+                      <span class="input-group-addon">枚</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-4"></div>
+                  <div class="col-sm-8">
+                    <div class='input-group'>
+                      <input type="number" class="form-control" placeholder="帳票数"/>
+                      <span class="input-group-addon">枚</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-4"></div>
+                  <div class="col-sm-8">
+                    <div class='input-group'>
+                      <input type="number" class="form-control" placeholder="バッヂ数"/>
+                      <span class="input-group-addon">枚</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- プロジェクト計画規模数 -->
+                <div class="form-group">
+                  <p for="title" class="control-label col-sm-4">
+                    <strong>プロジェクト計画規模数</strong>
+                  </p>
+                  <div class="col-sm-8">
+                    <div class='input-group' id='datetimepicker1'>
+                      <input type="number" class="form-control" placeholder="画面数"/>
+                      <span class="input-group-addon">枚</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-4"></div>
+                  <div class="col-sm-8">
+                    <div class='input-group'>
+                      <input type="number" class="form-control" placeholder="帳票数"/>
+                      <span class="input-group-addon">枚</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-4"></div>
+                  <div class="col-sm-8">
+                    <div class='input-group'>
+                      <input type="number" class="form-control" placeholder="バッヂ数"/>
+                      <span class="input-group-addon">枚</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- コンプライアンス -->
+              <div class="tab-pane" id="tab_default_2">
+                <h4>コンプライアンス</h4>
+                <div class="form-group">
+                  <p for="title" class="control-label col-sm-4">
+                    <strong>今月の稼働人数</strong>
+                  </p>
+                  <div class="col-sm-8">
+                    <div class='input-group'>
+                      <input type="number" class="form-control" placeholder="稼働人数"/>
+                      <span class="input-group-addon">人</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <p for="title" class="control-label col-sm-4">
+                    <strong>今月のオーダー有無</strong>
+                  </p>
+                  <div class="col-sm-8">
+                    <div class="input-group">
+                      <div id="radioBtn" class="btn-group">
+                        <a class="btn btn-primary btn-sm active" data-toggle="happy" data-title="Y">YES</a>
+                        <a class="btn btn-primary btn-sm notActive" data-toggle="happy" data-title="N">NO</a>
+                      </div>
+                      <input type="hidden" name="order" id="order">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <p for="title" class="control-label col-sm-4">
+                    <strong>今月の稼働PTR数</strong>
+                  </p>
+                  <div class="col-sm-8">
+                    <div class='input-group' id='datetimepicker1'>
+                      <input type="number" class="form-control" placeholder="稼働PTR数"/>
+                      <span class="input-group-addon">人</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab_default_3">
+                <h4>社内事務</h4>
+                <div class="form-group">
+                  <p for="title" class="control-label col-sm-4">
+                    <strong>商談検討会の実施有無</strong>
+                  </p>
+                  <div class="col-sm-8">
+                    <div class="input-group">
+                        <div id="radioBtn" class="btn-group">
+                            <a class="btn btn-primary btn-sm active" data-toggle="shodanKentou" data-title="Y">YES</a>
+                            <a class="btn btn-primary btn-sm notActive" data-toggle="shodanKentou" data-title="N">NO</a>
+                        </div>
+                        <input type="hidden" name="shodanKentou" id="shodanKentou">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <p for="title" class="control-label col-sm-4">
+                    <strong>見積もり検討会の実施有無</strong>
+                  </p>
+                  <div class="col-sm-8">
+                    <div class="input-group">
+                        <div id="radioBtn" class="btn-group">
+                            <a class="btn btn-primary btn-sm active" data-toggle="mitsumoriKentou" data-title="Y">YES</a>
+                            <a class="btn btn-primary btn-sm notActive" data-toggle="mitsumoriKentou" data-title="N">NO</a>
+                        </div>
+                        <input type="hidden" name="mitsumoriKentou" id="mitsumoriKentou">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <p for="title" class="control-label col-sm-4">
+                    <strong>SSPROの原価回答有無</strong>
+                  </p>
+                  <div class="col-sm-8">
+                    <div class="input-group">
+                      <div id="radioBtn" class="btn-group">
+                        <a class="btn btn-primary btn-sm active" data-toggle="ssproKaitou" data-title="Y">YES</a>
+                        <a class="btn btn-primary btn-sm notActive" data-toggle="ssproKaitou" data-title="N">NO</a>
+                      </div>
+                      <input type="hidden" name="ssproKaitou" id="ssproKaitou">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <p for="title" class="control-label col-sm-4">
+                    <strong>業績明細EXCELの記載有無</strong>
+                  </p>
+                  <div class="col-sm-8">
+                    <div class="input-group">
+                      <div id="radioBtn" class="btn-group">
+                        <a class="btn btn-primary btn-sm active" data-toggle="gyousekiKisai" data-title="Y">YES</a>
+                        <a class="btn btn-primary btn-sm notActive" data-toggle="gyousekiKisai" data-title="N">NO</a>
+                      </div>
+                      <input type="hidden" name="gyousekiKisai" id="gyousekiKisai">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <p for="title" class="control-label col-sm-4">
+                    <strong>暫定実績の確認有無</strong>
+                  </p>
+                  <div class="col-sm-8">
+                    <div class="input-group">
+                      <div id="radioBtn" class="btn-group">
+                        <a class="btn btn-primary btn-sm active" data-toggle="zanteiKakunin" data-title="Y">YES</a>
+                        <a class="btn btn-primary btn-sm notActive" data-toggle="zanteiKakunin" data-title="N">NO</a>
+                      </div>
+                      <input type="hidden" name="zanteiKakunin" id="zanteiKakunin">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <p for="title" class="control-label col-sm-4">
+                    <strong>暫定実績差異がある場合、作業表修正の確認有無</strong>
+                  </p>
+                  <div class="col-sm-8">
+                    <div class="input-group">
+                      <div id="radioBtn" class="btn-group">
+                        <a class="btn btn-primary btn-sm active" data-toggle="zanteiSaiKakunin" data-title="Y">YES</a>
+                        <a class="btn btn-primary btn-sm notActive" data-toggle="zanteiSaiKakunin" data-title="N">NO</a>
+                      </div>
+                      <input type="hidden" name="zanteiSaiKakunin" id="zanteiSaiKakunin">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <p for="title" class="control-label col-sm-4">
+                    <strong>作業表を修正した場合、部長、管理職への連絡有無</strong>
+                  </p>
+                  <div class="col-sm-8">
+                    <div class="input-group">
+                      <div id="radioBtn" class="btn-group">
+                        <a class="btn btn-primary btn-sm active" data-toggle="sagyouSyuseiRenraku" data-title="Y">YES</a>
+                        <a class="btn btn-primary btn-sm notActive" data-toggle="sagyouSyuseiRenraku" data-title="N">NO</a>
+                      </div>
+                      <input type="hidden" name="sagyouSyuseiRenraku" id="sagyouSyuseiRenraku">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <p for="title" class="control-label col-sm-4">
+                    <strong>SSPROの原価改定の実施有無</strong>
+                  </p>
+                  <div class="col-sm-8">
+                    <div class="input-group">
+                      <div id="radioBtn" class="btn-group">
+                        <a class="btn btn-primary btn-sm active" data-toggle="ssproJisshiUmu" data-title="Y">YES</a>
+                        <a class="btn btn-primary btn-sm notActive" data-toggle="ssproJisshiUmu" data-title="N">NO</a>
+                      </div>
+                      <input type="hidden" name="ssproJisshiUmu" id="ssproJisshiUmu">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <p for="title" class="control-label col-sm-4">
+                    <strong>業績明細EXCELの修正有無</strong>
+                  </p>
+                  <div class="col-sm-8">
+                    <div class="input-group">
+                      <div id="radioBtn" class="btn-group">
+                        <a class="btn btn-primary btn-sm active" data-toggle="gyosekiSyuseiUmu" data-title="Y">YES</a>
+                        <a class="btn btn-primary btn-sm notActive" data-toggle="gyosekiSyuseiUmu" data-title="N">NO</a>
+                      </div>
+                      <input type="hidden" name="gyosekiSyuseiUmu" id="gyosekiSyuseiUmu">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab_default_4">
+                <h4>プロジェクト計画</h4>
+                <div class="form-group">
+                  <p for="title" class="control-label col-sm-4">
+                    <strong>プロジェクト計画書の作成有無</strong>
+                  </p>
+                  <div class="col-sm-8">
+                    <div class='input-group'>
+                      <input type="number" class="form-control" placeholder="計画書枚数"/>
+                      <span class="input-group-addon">枚</span>
+                    </div>
+                  </div>
+                </div>
+                <h4>プロジェクト実施</h4>
+                <div class="form-group">
+                  <p for="title" class="control-label col-sm-4">
+                    <strong>QCD月例報告書の作成有無</strong>
+                  </p>
+                  <div class="col-sm-8">
+                    <div class="input-group">
+                      <div id="radioBtn" class="btn-group">
+                        <a class="btn btn-primary btn-sm active" data-toggle="qcdSakuseiUmu" data-title="Y">YES</a>
+                        <a class="btn btn-primary btn-sm notActive" data-toggle="qcdSakuseiUmu" data-title="N">NO</a>
+                      </div>
+                      <input type="hidden" name="qcdSakuseiUmu" id="qcdSakuseiUmu">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <p for="title" class="control-label col-sm-4">
+                    <strong>現段階の管理工数</strong>
+                  </p>
+                  <div class="col-sm-8">
+                    <!-- 時間 -->
+                  </div>
+                </div>
+                <div class="form-group">
+                  <p for="title" class="control-label col-sm-4">
+                    <strong>当月の平均残業見込み</strong>
+                  </p>
+                  <div class="col-sm-8">
+                    <!-- -->
+                  </div>
+                </div>
+                <div class="form-group">
+                  <p for="title" class="control-label col-sm-4">
+                    <strong>翌月の平均残業見込み</strong>
+                  </p>
+                  <div class="col-sm-8">
+                    <!-- -->
+                  </div>
+                </div>
+                <div class="form-group">
+                  <p for="title" class="control-label col-sm-4">
+                    <strong>翌月のの平均残業見込み</strong>
+                  </p>
+                  <div class="col-sm-8">
+                    <!-- -->
+                  </div>
+                </div>
+                <div class="form-group">
+                  <p for="title" class="control-label col-sm-4">
+                    <strong>業績明細EXCELの修正有無</strong>
+                  </p>
+                  <div class="col-sm-8">
+                    <div class="input-group">
+                      <div id="radioBtn" class="btn-group">
+                        <a class="btn btn-primary btn-sm active" data-toggle="gyosekiSyuseiUmu" data-title="Y">YES</a>
+                        <a class="btn btn-primary btn-sm notActive" data-toggle="gyosekiSyuseiUmu" data-title="N">NO</a>
+                      </div>
+                      <input type="hidden" name="gyosekiSyuseiUmu" id="gyosekiSyuseiUmu">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <p for="title" class="control-label col-sm-4">
+                    <strong>業績明細EXCELの修正有無</strong>
+                  </p>
+                  <div class="col-sm-8">
+
+                  </div>
+                </div>
+                <h4>プロジェクト完了</h4>
+                <div class="form-group">
+                  <p for="title" class="control-label col-sm-4">
+                    <strong>納品書の作成有無</strong>
+                  </p>
+                  <div class="col-sm-8">
+                    <div class="input-group">
+                      <div id="radioBtn" class="btn-group">
+                        <a class="btn btn-primary btn-sm active" data-toggle="nouhinSakuseiUmu" data-title="Y">YES</a>
+                        <a class="btn btn-primary btn-sm notActive" data-toggle="nouhinSakuseiUmu" data-title="N">NO</a>
+                      </div>
+                      <input type="hidden" name="nouhinSakuseiUmu" id="nouhinSakuseiUmu">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <p for="title" class="control-label col-sm-4">
+                    <strong>出荷検査の実施有無</strong>
+                  </p>
+                  <div class="col-sm-8">
+                    <div class="input-group">
+                      <div id="radioBtn" class="btn-group">
+                        <a class="btn btn-primary btn-sm active" data-toggle="syukaKensaUmu" data-title="Y">YES</a>
+                        <a class="btn btn-primary btn-sm notActive" data-toggle="syukaKensaUmu" data-title="N">NO</a>
+                      </div>
+                      <input type="hidden" name="syukaKensaUmu" id="syukaKensaUmu">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <p for="title" class="control-label col-sm-4">
+                    <strong>検収書の受領有無</strong>
+                  </p>
+                  <div class="col-sm-8">
+                    <div class="input-group">
+                      <div id="radioBtn" class="btn-group">
+                        <a class="btn btn-primary btn-sm active" data-toggle="kensyushoUmu" data-title="Y">YES</a>
+                        <a class="btn btn-primary btn-sm notActive" data-toggle="kensyushoUmu" data-title="N">NO</a>
+                      </div>
+                      <input type="hidden" name="kensyushoUmu" id="kensyushoUmu">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <p for="title" class="control-label col-sm-4">
+                    <strong>プロジェクト完了報告書の作成有無</strong>
+                  </p>
+                  <div class="col-sm-8">
+                    <div class="input-group">
+                      <div id="radioBtn" class="btn-group">
+                        <a class="btn btn-primary btn-sm active" data-toggle="kanryoHoukokuUmu" data-title="Y">YES</a>
+                        <a class="btn btn-primary btn-sm notActive" data-toggle="kanryoHoukokuUmu" data-title="N">NO</a>
+                      </div>
+                      <input type="hidden" name="kanryoHoukokuUmu" id="kanryoHoukokuUmu">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-offset-4 text-center">
+          <input type="submit" value="送信" class="btn btn-primary"/>&nbsp;
+          <input type="reset" value="キャンセル" class="btn btn-default"/>
+        </div>
+      </form>
+    </div>
+    <!-- End your code here -->
+  <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
