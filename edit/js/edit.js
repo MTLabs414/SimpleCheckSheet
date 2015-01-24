@@ -1,5 +1,7 @@
 $(function () {
 
+
+
   // バリデーション
   $("#registrationForm").validate({
       errorClass:'error',
@@ -26,7 +28,7 @@ $(function () {
           }
       },
       messages: {
-          username: "必須項目です。",
+          reauiredFld: "必須項目です。",
           email: "メールアドレスを入力してください",
           password: "パスワードを入力して下さい",
           confirmPassword: {
@@ -68,3 +70,20 @@ $(function () {
 
   //$('#datetimepicker2').datepicker();
 });
+
+/**
+ * send
+ *
+*/
+
+function sendForm(){
+
+
+
+}
+
+function validate(){
+
+
+
+}
