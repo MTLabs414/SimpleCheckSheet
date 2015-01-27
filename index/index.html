@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="http://getbootstrap.com/dist/js/bootstrap.js"></script>
+    <link type="text/css" rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.css"/>
+    <title>HTML5, CSS3 and JavaScript demo</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css"/>
+</head>
+  <body>
+    <!-- Start your code here -->
+    <p class="lw">PJ周次報告書ツール</p>
+    <!--
+      アコーディオン参照URL：http://designup.jp/bootstrap3-collapse-194/
+      id : ここで指定したidとタイトル部分のdata-parentを合わせる
+    -->
+    <div class="panel-group" id="accordion">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <!-- 
+              data-toggle : Collapseを起動させる
+              data-parent : アコーディオン風に閉じたり開いたりするためのもの
+              href : 指定した場所のパネルを開く
+            -->
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+              プロジェクト一覧
+            </a>
+          </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse">
+          <div class="panel-body">
+            <!-- text-danger:文字色を赤字に変更 -->
+            <p class="text-danger">報告書を出していないプロジェクトがあります。</p>
+            <!--
+              table-striped: 1行ごとに背景色を変更
+              table-bordered: 枠線を設定
+              table-hover: カーソルを合わせた時に背景色を変更
+            -->
+            <table class="table table-striped table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th>プロジェクト名</th>
+                  <th>リーダー氏名</th>
+                  <th>最終報告日</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>MTLabPJ</td>
+                  <td>小林　数馬</td>
+                  <td>2014/10/23（木）</td>
+                </tr>
+                <tr>
+                  <td>南河内PJ</td>
+                  <td>遠藤　久之</td>
+                  <td>2014/10/23（木）</td>
+                </tr>
+                <tr>
+                  <td>阪神甲子園球場PJ</td>
+                  <td>鵜飼　杏奈</td>
+                  <td>2014/10/22（水）</td>
+                </tr>
+                <tr>
+                  <td>タブレット端末PJ</td>
+                  <td>小林　数馬</td>
+                  <td>2014/10/22（水）</td>
+                </tr>
+                <tr>
+                  <td>清水寺保全PJ</td>
+                  <td>言上　和也</td>
+                  <td>2014/10/22（水）</td>
+                </tr>
+                <tr>
+                  <td>ドラフト会議PJ</td>
+                  <td>和田　豊</td>
+                  <td>2014/10/22（水）</td>
+                </tr>
+                <!-- danger:行の背景色を変更（赤） -->
+                <tr class="danger">
+                  <td>AndroidPJ</td>
+                  <td>能見　篤史</td>
+                  <td>2014/10/15（水）</td>
+                </tr>
+                <tr class="danger">
+                  <td>IOSPJ</td>
+                  <td>鳥谷　敬</td>
+                  <td>2014/10/14（火）</td>
+                </tr>
+                <tr class="danger">
+                  <td>WEB開発PJ</td>
+                  <td>マット・マートン</td>
+                  <td>2014/10/13（月）</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--
+      btn-primary:背景色青で白字
+      btn-default:背景色白で黒字
+    --> 
+    <button type="button" class="btn btn-primary">提出画面</button>
+    <button type="button" class="btn btn-default">管理者画面</button>
+    <!-- End your code here -->
+  <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
