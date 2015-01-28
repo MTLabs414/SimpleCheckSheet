@@ -60,6 +60,7 @@
             <div class="tab-content">
               <div class="tab-pane active" id="tab_default_1">
                 <h4>プロジェクト計画</h4>
+                <!-- 現在の主工程　工程を選択 -->
                 <div class="form-group">
                   <p for="title" class="control-label col-sm-4">
                     <strong>現在の主工程</strong>
@@ -74,7 +75,7 @@
                     </select>
                   </div>
                 </div>
-                <!-- 現在の主工程　工程を選択 -->
+                <!-- プロジェクト開始選択 -->
                 <div class="form-group">
                   <p class="control-label col-sm-4">
                     <strong>プロジェクト計画期間</strong>
@@ -82,20 +83,20 @@
                   <div class="col-sm-8">
                     <div class='input-group date' id='datetimepicker1'>
                       <span style="width:80" class="input-group-addon">開始</span>
-                      <input id="dtPjStartDate" type='text' class="form-control" />
+                      <input id="pjStart" type='text' class="form-control" />
                       <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                       </span>
                     </div>
                   </div>
                 </div>
-                <!-- プロジェクト計画期間 -->
+                <!-- プロジェクト終了選択-->
                 <div class="form-group">
                   <div class="col-sm-4"></div>
                   <div class="col-sm-8">
                     <div class='input-group date' id='datetimepicker2'>
                       <span style="width:80" class="input-group-addon">終了</span>
-                      <input id="dtPjStartDate" type='text' class="form-control" />
+                      <input id="pjEnd" type='text' class="form-control" />
                       <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                       </span>
@@ -110,7 +111,7 @@
                   </p>
                   <div class="col-sm-8">
                     <div class='input-group'>
-                      <input id="txtKeikakuGamen" type="number" class="form-control" placeholder="画面数" name="reauiredFld"/>
+                      <input id="gamenNum" type="number" class="form-control" placeholder="画面数" name="reauiredFld"/>
                       <span class="input-group-addon">枚</span>
                     </div>
                   </div>
@@ -120,7 +121,7 @@
                   <div class="col-sm-4"></div>
                   <div class="col-sm-8">
                     <div class='input-group'>
-                      <input id="txtKeikakuChohyo" type="number" class="form-control" placeholder="帳票数"/>
+                      <input id="chohyoNum" type="number" class="form-control" placeholder="帳票数"/>
                       <span class="input-group-addon">枚</span>
                     </div>
                   </div>
@@ -130,7 +131,7 @@
                   <div class="col-sm-4"></div>
                   <div class="col-sm-8">
                     <div class='input-group'>
-                      <input id="txtKeikakuBacchi" type="number" class="form-control" placeholder="バッヂ数"/>
+                      <input id="bucchiNum" type="number" class="form-control" placeholder="バッヂ数"/>
                       <span class="input-group-addon">枚</span>
                     </div>
                   </div>
@@ -455,7 +456,7 @@
           </div>
         </div>
         <div class="col-sm-offset-4 text-center">
-          <input type="submit" value="送信" class="btn btn-primary"/>&nbsp;
+          <input type="button" id="btn-submit" value="送信" class="btn btn-primary"/>&nbsp;
           <input type="reset" value="キャンセル" class="btn btn-default"/>
         </div>
       </form>
