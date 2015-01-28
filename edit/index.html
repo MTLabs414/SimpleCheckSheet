@@ -82,7 +82,7 @@
                   <div class="col-sm-8">
                     <div class='input-group date' id='datetimepicker1'>
                       <span style="width:80" class="input-group-addon">開始</span>
-                      <input type='text' class="form-control" />
+                      <input id="dtPjStartDate" type='text' class="form-control" />
                       <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                       </span>
@@ -95,70 +95,42 @@
                   <div class="col-sm-8">
                     <div class='input-group date' id='datetimepicker2'>
                       <span style="width:80" class="input-group-addon">終了</span>
-                      <input type='text' class="form-control" />
+                      <input id="dtPjStartDate" type='text' class="form-control" />
                       <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                       </span>
                     </div>
                   </div>
                 </div>
-                <!-- プロジェクト計画規模数 -->
+                <!-- プロジェクト計画機能数 -->
+                <!-- 計画画面数 -->
                 <div class="form-group">
                   <p for="title" class="control-label col-sm-4">
                     <strong>プロジェクト計画機能数</strong>
                   </p>
                   <div class="col-sm-8">
                     <div class='input-group'>
-                      <input type="number" class="form-control" placeholder="画面数" name="reauiredFld"/>
+                      <input id="txtKeikakuGamen" type="number" class="form-control" placeholder="画面数" name="reauiredFld"/>
                       <span class="input-group-addon">枚</span>
                     </div>
                   </div>
                 </div>
+                <!-- 計画帳票数 -->
                 <div class="form-group">
                   <div class="col-sm-4"></div>
                   <div class="col-sm-8">
                     <div class='input-group'>
-                      <input type="number" class="form-control" placeholder="帳票数"/>
+                      <input id="txtKeikakuChohyo" type="number" class="form-control" placeholder="帳票数"/>
                       <span class="input-group-addon">枚</span>
                     </div>
                   </div>
                 </div>
+                <!-- 計画バッヂ数 -->
                 <div class="form-group">
                   <div class="col-sm-4"></div>
                   <div class="col-sm-8">
                     <div class='input-group'>
-                      <input type="number" class="form-control" placeholder="バッヂ数"/>
-                      <span class="input-group-addon">枚</span>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- プロジェクト計画規模数 -->
-                <div class="form-group">
-                  <p for="title" class="control-label col-sm-4">
-                    <strong>プロジェクト計画規模数</strong>
-                  </p>
-                  <div class="col-sm-8">
-                    <div class='input-group'>
-                      <input type="number" class="form-control" name="requiredFld" placeholder="画面数"/>
-                      <span class="input-group-addon">枚</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-sm-4"></div>
-                  <div class="col-sm-8">
-                    <div class='input-group'>
-                      <input type="number" class="form-control" name="requiredFld" placeholder="帳票数"/>
-                      <span class="input-group-addon">枚</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-sm-4"></div>
-                  <div class="col-sm-8">
-                    <div class='input-group'>
-                      <input type="number" class="form-control" placeholder="バッヂ数"/>
+                      <input id="txtKeikakuBacchi" type="number" class="form-control" placeholder="バッヂ数"/>
                       <span class="input-group-addon">枚</span>
                     </div>
                   </div>
@@ -173,11 +145,12 @@
                   </p>
                   <div class="col-sm-8">
                     <div class='input-group'>
-                      <input type="number" class="form-control" placeholder="稼働人数"/>
+                      <input id="txtKadouNum" type="number" class="form-control" placeholder="稼働人数"/>
                       <span class="input-group-addon">人</span>
                     </div>
                   </div>
                 </div>
+                <!-- 今月のオーダー有無-->
                 <div class="form-group">
                   <p for="title" class="control-label col-sm-4">
                     <strong>今月のオーダー有無</strong>
@@ -188,24 +161,27 @@
                         <a class="btn btn-primary btn-sm active" data-toggle="happy" data-title="Y">YES</a>
                         <a class="btn btn-primary btn-sm notActive" data-toggle="happy" data-title="N">NO</a>
                       </div>
-                      <input type="hidden" name="order" id="order">
+                      <input id="rdoOrderUmu" type="hidden" name="order" id="order">
                     </div>
                   </div>
                 </div>
+                <!--  今月の稼働PTR数 -->
                 <div class="form-group">
                   <p for="title" class="control-label col-sm-4">
                     <strong>今月の稼働PTR数</strong>
                   </p>
                   <div class="col-sm-8">
                     <div class='input-group'>
-                      <input type="number" class="form-control" placeholder="稼働PTR数"/>
+                      <input id="txtKadouPTRNum" type="number" class="form-control" placeholder="稼働PTR数"/>
                       <span class="input-group-addon">人</span>
                     </div>
                   </div>
                 </div>
               </div>
+              <!-- 社内事務タブ -->
               <div class="tab-pane" id="tab_default_3">
                 <h4>社内事務</h4>
+                <!-- 商談の検討会有無-->
                 <div class="form-group">
                   <p for="title" class="control-label col-sm-4">
                     <strong>商談検討会の実施有無</strong>
@@ -216,10 +192,11 @@
                             <a class="btn btn-primary btn-sm active" data-toggle="shodanKentou" data-title="Y">YES</a>
                             <a class="btn btn-primary btn-sm notActive" data-toggle="shodanKentou" data-title="N">NO</a>
                         </div>
-                        <input type="hidden" name="shodanKentou" id="shodanKentou">
+                        <input id="rdoShoudanUm" type="hidden" name="shodanKentou" id="shodanKentou">
                     </div>
                   </div>
                 </div>
+                <!-- 見積もり検討会有無-->
                 <div class="form-group">
                   <p for="title" class="control-label col-sm-4">
                     <strong>見積もり検討会の実施有無</strong>
@@ -230,10 +207,11 @@
                             <a class="btn btn-primary btn-sm active" data-toggle="mitsumoriKentou" data-title="Y">YES</a>
                             <a class="btn btn-primary btn-sm notActive" data-toggle="mitsumoriKentou" data-title="N">NO</a>
                         </div>
-                        <input type="hidden" name="mitsumoriKentou" id="mitsumoriKentou">
+                        <input id="rdoMitsumoriUmu" type="hidden" name="mitsumoriKentou" id="mitsumoriKentou">
                     </div>
                   </div>
                 </div>
+                <!-- SSPRO有無 -->
                 <div class="form-group">
                   <p for="title" class="control-label col-sm-4">
                     <strong>SSPROの原価回答有無</strong>

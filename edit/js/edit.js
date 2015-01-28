@@ -3,11 +3,35 @@ $(function () {
   // JSON形式のデータ
   var data =
   {
+    koutei:"",
+    pjStart:"",
+    pjEnd:"",
+    gamenNum:0,
+    chohyoNum:0,
+    bucchiNum:0,
+    kadouNum:0,
+    orderUmu:"",
+    kadouPTRUmu:0,
+    shoudanUmu:"",
+    mitsumoriUmu:"",
+    ssproUmu:"",
+    gyosekiKisaiUmu:"",
+    jissekiUmu:"",
+    excelKisaiUmu:"",
+    syuseiKakuninUmu:"",
+    mgRenrakuUmu:"",
+    ssproKaiteiUmu:"",          //
+    excelSyuseiUmu:"",          // 業績明細EXCELの修正有無
+    keikakuSakuseiUmu:"",       // プロジェクト計画書の作成有無
+    qcdSakuseiUmu:"",           // QCD月例報告書作成有無
+    kanriKousu:0,               // 現段階管理工数
+    nowZangyouAvg:0,            // 当月の平均残業見込み
+    nextZangyouAvg:0,           // 翌月の平均残業見込み
 
 
   }
 
-
+　data.koutei = $('#kotei').val();
 
   // バリデーション
   $("#registrationForm").validate({
